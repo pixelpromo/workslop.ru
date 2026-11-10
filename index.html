@@ -277,14 +277,13 @@ body.is-press .cursor-ring{width:52px;height:52px;background:var(--sky);border-c
 .credit-txt b{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;color:var(--paper);font-weight:700;white-space:nowrap}
 .credit-txt i{font-family:var(--mono);font-size:.56rem;letter-spacing:.02em;color:var(--paper-dim);font-style:normal;white-space:nowrap}
 .share-mini{
-  display:inline-flex;align-items:center;gap:.45rem;
-  font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-  padding:.4rem .6rem;border-radius:999px;
+  flex:none;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;
   background:rgba(13,13,20,.55);backdrop-filter:blur(8px);border:1px solid var(--line);
   color:var(--paper);opacity:.62;transition:opacity .3s,border-color .3s;
 }
 .share-mini:hover{opacity:1;border-color:var(--paper-dim)}
-.share-mini svg{width:12px;height:12px;color:var(--sky)}
+.share-mini svg{width:14px;height:14px;color:var(--sky)}
 
 /* ---------- preloader ---------- */
 #loader{
@@ -408,7 +407,6 @@ body.loaded .rise.d3{transition-delay:.34s}
     </a>
     <button class="share-mini" aria-label="Поделиться">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-      Поделиться
     </button>
   </div>
 </div>
