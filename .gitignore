@@ -1,2 +1,6 @@
 .DS_Store
 workslop-deploy.zip
+
+.deploy_key
+.deploy_key.pub
+known_hosts
