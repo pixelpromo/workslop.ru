@@ -659,7 +659,11 @@ body.loaded .rise.d3{transition-delay:.34s}
     var newTop=Math.floor(y/STEP);
     var d=newTop-topIndex;
     if(d===0) return;
-    if(d>0){
+    if(d>=needed || d<=-needed){
+      track.innerHTML='';
+      topIndex=newTop;
+      fill(needed);
+    } else if(d>0){
       for(var k=0;k<d;k++){ track.removeChild(track.firstElementChild); }
       topIndex+=d; fill(d);
     } else {
@@ -671,7 +675,6 @@ body.loaded .rise.d3{transition-delay:.34s}
       }
       topIndex=newTop;
     }
-    // prune
     var cutoff=topIndex-40;
     if(cache.size>120){
       cache.forEach(function(v,k){ if(k<cutoff) cache.delete(k); });
@@ -714,7 +717,7 @@ body.loaded .rise.d3{transition-delay:.34s}
   /* gentle auto-drift, пока никто не крутит */
   var prevT=performance.now();
   function loop(t){
-    var dt=t-prevT; prevT=t;
+    var dt=Math.min(t-prevT, 50); prevT=t;
     if(!reduceMotion && (t-lastInteract)>1600){
       y+=dt*0.03;
       tick();
