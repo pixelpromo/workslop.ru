@@ -74,12 +74,6 @@ button{background:none;border:0;color:inherit;font:inherit;cursor:none;text-alig
   0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}
   40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,3%)}
 }
-.loadline{
-  position:fixed;top:0;left:0;height:2px;width:0;z-index:9500;pointer-events:none;
-  background:linear-gradient(90deg,var(--acid),var(--sky),var(--coral));
-  animation:loadloop 7s var(--ease) infinite;
-}
-@keyframes loadloop{0%{width:0;opacity:1}70%{width:100%;opacity:1}100%{width:100%;opacity:0}}
 
 /* cursor */
 .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
@@ -311,7 +305,6 @@ body.loaded .rise.d3{transition-delay:.34s}
 <body>
 
 <div class="grain" aria-hidden="true"></div>
-<div class="loadline" aria-hidden="true"></div>
 <div class="cursor-dot" aria-hidden="true"></div>
 <div class="cursor-ring" aria-hidden="true"><span>ГОУ</span></div>
 
