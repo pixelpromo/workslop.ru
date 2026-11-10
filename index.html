@@ -83,7 +83,7 @@ button{background:none;border:0;color:inherit;font:inherit;cursor:none;text-alig
   transition:width .25s var(--ease),height .25s var(--ease),background .25s,border-color .25s;
   display:grid;place-items:center;
 }
-.cursor-ring span{font-family:var(--mono);font-size:9px;color:var(--ink);opacity:0;font-weight:700}
+.cursor-ring span{font-family:var(--mono);font-size:9px;color:var(--ink);opacity:0;font-weight:700;white-space:pre-line;text-align:center;line-height:1.3}
 body.is-hover .cursor-ring{width:74px;height:74px;background:var(--acid);border-color:var(--acid)}
 body.is-hover .cursor-ring span{opacity:1}
 body.is-press .cursor-ring{width:52px;height:52px;background:var(--sky);border-color:var(--sky)}
@@ -306,7 +306,7 @@ body.loaded .rise.d3{transition-delay:.34s}
 
 <div class="grain" aria-hidden="true"></div>
 <div class="cursor-dot" aria-hidden="true"></div>
-<div class="cursor-ring" aria-hidden="true"><span>СЛОП</span></div>
+<div class="cursor-ring" aria-hidden="true"><span>Это —<br>Ворк<br>Слоп</span></div>
 
 <!-- preloader -->
 <div id="loader">
@@ -427,12 +427,12 @@ body.loaded .rise.d3{transition-delay:.34s}
       var link = e.target.closest("a,button");
       if(tile){
         document.body.classList.add("is-hover");
-        ring.querySelector("span").textContent = "СЛОП";
+        ring.querySelector("span").textContent = "Это —\nВорк\nСлоп";
         var ac = tile.getAttribute("data-ac");
         if(ac){ ring.style.background = ac; ring.style.borderColor = ac; brandDot.style.background = ac; }
       } else if(link){
         document.body.classList.add("is-hover");
-        ring.querySelector("span").textContent = "СЛОП";
+        ring.querySelector("span").textContent = "Это —\nВорк\nСлоп";
         ring.style.background = ""; ring.style.borderColor = ""; brandDot.style.background = "";
       } else {
         document.body.classList.remove("is-hover");
