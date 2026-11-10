@@ -450,16 +450,11 @@ body.loaded .rise.d3{transition-delay:.34s}
     })();
     document.addEventListener("mouseover", function(e){
       var tile = e.target.closest(".tile");
-      var link = e.target.closest("a,button");
       if(tile){
         document.body.classList.add("is-hover");
         ring.querySelector("span").textContent = "ЭТО\nВОРКСЛОП";
         var ac = tile.getAttribute("data-ac");
         if(ac){ ring.style.background = ac; ring.style.borderColor = ac; brandDot.style.background = ac; }
-      } else if(link){
-        document.body.classList.add("is-hover");
-        ring.querySelector("span").textContent = "ЭТО\nВОРКСЛОП";
-        ring.style.background = ""; ring.style.borderColor = ""; brandDot.style.background = "";
       } else {
         document.body.classList.remove("is-hover");
         ring.style.background = ""; ring.style.borderColor = ""; brandDot.style.background = "";
